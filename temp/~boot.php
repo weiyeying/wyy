@@ -6,6 +6,7 @@ class Applaction{
     
     public static function run(){
         self::_init();
+        self::_import_file();
         self::_set_url();
         spl_autoload_register(array(__CLASS__,'_auto_load'));
         self::_create_demo();
@@ -42,7 +43,23 @@ str;
         C("SESSION_START")||session_start();
 
     }
-    
+    //引入类
+    private static function _import_file(){
+        $arr=C("USER_LIB_FUNCTION");
+        if(is_array($arr)&&count($arr)>0){
+            foreach ($arr as $v){
+              $path=APP_COMMON_LIB."/".$v.".php" ;
+              include $path;
+            }
+          
+        }
+    }
+
+
+
+
+
+
     private static function _auto_load($class_name){
         $file=APP_CONTROLLER."/".$class_name.".php";
         include APP_CONTROLLER."/".$class_name.".php";
