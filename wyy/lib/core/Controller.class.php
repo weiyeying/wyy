@@ -32,7 +32,9 @@ class Controller {
         
     }
 
-
+public function db($sql){
+    return new DB($sql);
+}
 
     public function success($title,$msg,$url) {
      echo   include APP_PUBLIC."/success.php";

@@ -7,8 +7,8 @@ class wyy{
     public static function run(){
         self::_set_defind(); //设置常量
         defined('debug')||define('debug', false);
-       if(debug){
-        self::_create_dir();//创建应用目录
+       if(debug || !is_file(TEMP_PATH."/~boot.php")){
+       self::_create_dir();//创建应用目录
         self::_use_class(); //引入类  
        }else{
            error_reporting(0);
@@ -29,6 +29,7 @@ class wyy{
         define('COMMON_PATH', WYY_PATH."/common");
         define('DATA_PATH', WYY_PATH."/data");
         define('TPL_PATH', DATA_PATH."/tpl");
+        define('EXTEND', WYY_PATH."/extends");
         //应用目录
         define('ROOT_PATH', dirname(WYY_PATH));//根目录
         define("APP_PATH", ROOT_PATH."/".APP_NAME);
@@ -43,9 +44,9 @@ class wyy{
         define("LOG_PATH", TEMP_PATH."/log");
         //公共文件
         define("APP_COMMON",ROOT_PATH."/common");
-         define("APP_COMMON_CONFIG",APP_COMMON."/config");
-          define("APP_COMMON_LIB",APP_COMMON."/lib");
-           define("APP_COMMON_MODEL",APP_COMMON."/model");
+        define("APP_COMMON_CONFIG",APP_COMMON."/config");
+        define("APP_COMMON_LIB",APP_COMMON."/lib");
+        define("APP_COMMON_MODEL",APP_COMMON."/model");
         
         
     }
@@ -68,7 +69,7 @@ class wyy{
            CORE_PATH."/Applaction.class.php",
            COMMON_PATH."/functions.php",
            CORE_PATH."/Controller.class.php",
-           CORE_PATH."/Log.class.php"
+           CORE_PATH."/Log.class.php",
         );
         $str="";
         for($i=0;$i<count($arr);$i++){

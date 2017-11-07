@@ -13,3 +13,62 @@
 2017-11-03 : C:/www/WWW/wyy/Index/view/add/index.php模板文件不存在
 2017-11-03 : Array..请传个数组好吗
 2017-11-03 : 1111..请传个数组好吗
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php文件不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php文件不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php文件不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php文件不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php文件不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php文件不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php文件不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php文件不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php文件不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/aaaaController.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/55Controller.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/55Controller.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/55Controller.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/55Controller.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/55Controller.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/55Controller.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/55Controller.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/addController.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/addController.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/addController.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/addController.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/addController.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/addController.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/addController.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/addController.php控制器不存在
+2017-11-03 : C:/www/WWW/wyy/git/Index/controller/addController.php控制器不存在
+2017-11-03 : C:\www\WWW\wyy\git\Index\controller\IndexController.php&nbsp;include(1.htm): failed to open stream: No such file or directory&nbsp;7
+2017-11-03 : C:\www\WWW\wyy\git\Index\controller\IndexController.php&nbsp;include(): Failed opening '1.htm' for inclusion (include_path='.;C:\php\pear')&nbsp;7
+2017-11-03 : C:\www\WWW\wyy\git\Index\controller\IndexController.php&nbsp;Cannot modify header information - headers already sent by (output started at C:\www\WWW\wyy\git\wyy\data\tpl\halt.php:24)&nbsp;8
+2017-11-03 : include(1.htm): failed to open stream: No such file or directory
+2017-11-03 : include(): Failed opening '1.htm' for inclusion (include_path='.;C:\php\pear')
+2017-11-03 : Cannot modify header information - headers already sent by (output started at C:\www\WWW\wyy\git\wyy\data\tpl\halt.php:26)
+2017-11-03 : include(1.htm): failed to open stream: No such file or directory
+2017-11-03 : include(): Failed opening '1.htm' for inclusion (include_path='.;C:\php\pear')
+2017-11-03 : Cannot modify header information - headers already sent by (output started at C:\www\WWW\wyy\git\wyy\data\tpl\halt.php:26)
+2017-11-03 : C:/www/WWW/wyy/git/wyy/extends/DB.php文件不存在
+2017-11-03 : include(C:/www/WWW/wyy/git/wyy/extends/DB.php): failed to open stream: No such file or directory
+2017-11-03 : include(): Failed opening 'C:/www/WWW/wyy/git/wyy/extends/DB.php' for inclusion (include_path='.;C:\php\pear')
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : Undefined variable: db
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : Undefined variable: db
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : Undefined variable: dsn
+2017-11-03 : Undefined variable: username
+2017-11-03 : Undefined variable: passwd
+2017-11-03 : Undefined variable: options
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : PDO::__construct() expects at least 1 parameter, 0 given
+2017-11-03 : Undefined index: DBCHARSET
+2017-11-03 : Accessing static property DB::$pdo as non static

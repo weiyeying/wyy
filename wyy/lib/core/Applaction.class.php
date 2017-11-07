@@ -6,6 +6,10 @@ class Applaction{
     
     public static function run(){
         self::_init();
+        //一般错误处理
+        set_error_handler(array(__CLASS__,"error")); 
+        //自命错误处理
+        //register_shutdown_function(array(__CLASS__,"error"));
         self::_import_file();
         self::_set_url();
         spl_autoload_register(array(__CLASS__,'_auto_load'));
@@ -28,7 +32,8 @@ $str=<<<str
     "URL"=>1,//0:默认规则  1:PATHINFO模式
     "DEFAULT_CONTROLLER"=>"index", //默认控制器
     "DEFAULT_FUNCTION"=>"index", //默认方法
-     "ERROR_URL"=>"/index/index", //报错404
+    "ERROR_URL"=>"/index/index", //报错404
+    "USER_LIB_FUNCTION"=>[], //自动加载类或方法
    );   
 ?>
 str;
@@ -43,7 +48,15 @@ str;
         C("SESSION_START")||session_start();
 
     }
-    //引入类
+    //错误处理
+    public static function error($errorno,$error,$file,$line){
+        halt($error);
+   }
+
+
+
+
+    //引入用户类
     private static function _import_file(){
         $arr=C("USER_LIB_FUNCTION");
         if(is_array($arr)&&count($arr)>0){
@@ -55,14 +68,28 @@ str;
         }
     }
 
-
-
-
-
-
     private static function _auto_load($class_name){
-        $file=APP_CONTROLLER."/".$class_name.".php";
-        include APP_CONTROLLER."/".$class_name.".php";
+      switch (true){
+        case strlen($class_name)>=10&&substr($class_name,-10)=='Controller':
+          
+             $file=APP_CONTROLLER."/".$class_name.".php";
+            if(!is_file($file)){
+               if(debug){
+                  halt($file."控制器不存在");  
+                }else{
+                //引入404
+                $exp=  explode('/', C("ERROR_URL"));
+                $file=APP_CONTROLLER."/".$exp[0]."Controller.php";
+                }
+            } 
+            include $file;
+          break;
+        default :
+              $file=EXTEND."/".$class_name.".php";
+             if(!is_file($file)) halt($file."文件不存在");
+            include $file;
+        }
+       
     }
 
     //设置外部路径
@@ -117,12 +144,48 @@ str;
                $a=!isset($exp[2])?C('DEFAULT_FUNCTION'):$exp[2];
             }
         }
+
           //定义控制器与方法
         define('CONTROLLER_URLs',$c);
         define('ACTION_URL',$a);
+        !C("CHECK_URL")||self::check_url($c,$a);
         $c.="Controller";
+        if(!class_exists($c)){
+          if(!debug){
+              //引入404
+                $exp=  explode('/', C("ERROR_URL"));
+                $c=$exp[0]."Controller";
+                  $obj=new $c();
+                  $obj->$exp[1]();
+          }   
+        }else{
         $obj=new $c();
-        $obj->$a();
+        $obj->$a();    
+        }
+        
+  
+    }
+    
+    
+    private static function  check_url($c,$a){
+       $url=  include APP_COMMON_CONFIG."/url.php";
+       $path="/".$c."/".$a;
+       $status=false;
+       if(is_array($url)){
+           foreach ($url[APP_NAME] as $v){
+              if($v['path']==$path){
+              return true;
+               
+              }
+           }
+          halt("chekc_url页面不存在！请检查配置文件是否开启了url验证");
+     
+      
+       }else{
+           halt("chekc_url错误不是一个数组");
+       }
+    
+     die;
     }
     
 }

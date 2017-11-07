@@ -8,7 +8,7 @@
     "URL"=>1,//0:默认规则  1:PATHINFO模式
     "DEFAULT_CONTROLLER"=>"index", //默认控制器
     "DEFAULT_FUNCTION"=>"index", //默认方法
-    "ERROR_URL"=>"/index/index", //报错404
-     "USER_LIB_FUNCTION"=>['img'],
+    "ERROR_URL"=>"/index/add", //报错404
+    "USER_LIB_FUNCTION"=>[],
    );   
 ?>

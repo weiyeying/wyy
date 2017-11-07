@@ -1,5 +1,4 @@
 <?php
-
 /*
  *  图片处理类.
  *  weiyeying 

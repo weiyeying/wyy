@@ -5,17 +5,21 @@
  * **/
 function halt($error){
    log::wyy_log($error); //记录日志
-  $dug=debug_backtrace();
+   if(debug){
+ $dug=debug_backtrace();
   $arr=array();
   $arr["function"]=$dug[1]['function'];
-  $arr['line']=$dug[1]['line'];
-  $arr['file']=$dug[1]['file'];
+  $arr['line']=  isset($dug[1]['line'])?$dug[1]['line']:'';
+  $arr['file']=  isset($dug[1]['file'])?$dug[1]['file']:'';
   $arr['msg']=$error;
   ob_start();
   debug_print_backtrace();
   $arr['trace']= htmlspecialchars(ob_get_clean());
   include TPL_PATH."/halt.php";
-  
+ }else{
+     $url=C("ERROR_URL");
+     redirect($url);
+ }
 }
 
 
@@ -63,5 +67,7 @@ function C($key=NULL,$val=NULL){
     }
     return $config;
 }
+
+
 
 ?>
