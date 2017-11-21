@@ -32,6 +32,21 @@ wyy框架是一个简单快速小巧的php框架，框架以至简为目标初�
 3:框架数据模型：
 
 原生sql随意查询
+ $sql = "select * from  users where id=1 ";
+ $r = $this->db($sql)->queryAll();
+ 
+4:模板渲染
+ $this->render("index", $r);
+ 
+5：html静态化
+   if(!$this->isCache("add",100)){
+       $sql="select * from users where id=1";
+       $data=$this->db($sql)->queryOne();   
+       $this->renderCache("add",array("data"=>$data),100);
+       }else{
+          $this->renderCache("add",100);   
+    }
+ 
 
 
 
